@@ -1,6 +1,6 @@
 # 곱집합 구하기
 # 두 스트링 'ABCD', 'xy' 의 곱집합은 Ax Ay Bx By Cx Cy Dx Dy 입니다.
-
+# https://realpython.com/python-itertools/
 import numpy as np
 import operator
 from functools import reduce
