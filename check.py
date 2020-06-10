@@ -6,3 +6,6 @@ str = 'sre'
 print(str[-1])
 
 print(1<<0) 
+a, b = 1, 2
+print(a)
+print(b)

@@ -22,12 +22,11 @@ def bfs(x, y):
     c[x][y] = 1
     maxN = 0
     while q:
-        [x, y] = q.popleft()
+        x, y = q.popleft()
         for i in range(4):
             Nx, Ny = x+dx[i], y+dy[i]
-            if 0 < Nx < N and 0 < Ny < M and maze[Nx][Ny] == 'L':
+            if 0 <= Nx < N and 0 <= Ny < M and maze[Nx][Ny] == 'L' and c[Nx][Ny] == 0:
                 q.append([Nx, Ny])
-                maze[Nx][Ny] = 'W'
                 c[Nx][Ny] = c[x][y]+1
                 maxN = max(c[Nx][Ny], maxN)
     return maxN - 1
@@ -36,6 +35,6 @@ def bfs(x, y):
 for i in range(N):
     for j in range(M):
         if maze[i][j] == 'L':
-            maxCount = (maxCount, bfs(i, j))
+            maxCount = max(maxCount, bfs(i, j))
 
 print(maxCount)
